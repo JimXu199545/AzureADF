@@ -14,10 +14,6 @@
 		"CosmosDb1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
-		},
-		"eventTrigger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/e5b0fcfa-e859-43f3-8d84-5e5fe29f4c68/resourceGroups/andywin7/providers/Microsoft.Storage/storageAccounts/andyprivate"
 		}
 	},
 	"variables": {
@@ -200,7 +196,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/eventTrigger')]",
+			"name": "[concat(parameters('factoryName'), '/scheduleTrigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -215,14 +211,23 @@
 						"parameters": {}
 					}
 				],
-				"type": "BlobEventsTrigger",
+				"type": "ScheduleTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/copy/blobs/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('eventTrigger_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2020-10-26T06:08:00Z",
+						"endTime": "2020-10-28T06:08:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								11
+							],
+							"hours": [
+								6
+							]
+						}
+					}
 				}
 			},
 			"dependsOn": [

@@ -11,9 +11,6 @@
 		"CosmosDb1_connectionString": {
 			"value": ""
 		},
-		"eventTrigger_properties_typeProperties_scope": {
-			"value": "/subscriptions/e5b0fcfa-e859-43f3-8d84-5e5fe29f4c68/resourceGroups/andywin7/providers/Microsoft.Storage/storageAccounts/andyprivate"
-		},
 		"containerUri": {
 			"value": ""
 		},
