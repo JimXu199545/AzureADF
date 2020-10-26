@@ -1,0 +1,17 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/copy/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e5b0fcfa-e859-43f3-8d84-5e5fe29f4c68/resourceGroups/andywin7/providers/Microsoft.Storage/storageAccounts/andyprivate",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
