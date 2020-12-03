@@ -16,7 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://testapi06.azurewebsites.net/weatherForecast",
-					"method": "GET"
+					"method": "GET",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://testapi06.azurewebsites.net"
+					}
 				}
 			}
 		],
